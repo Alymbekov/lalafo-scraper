@@ -1,3 +1,8 @@
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.utils import ChromeType
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 
 BASE_URL = "https://lalafo.kg"
 
@@ -12,5 +17,11 @@ header = {
     'Accept-Language': 'en-US,en;q=0.8',
     'Connection': 'keep-alive'
 }
+
+chrome_options = Options()
+chrome_options.add_argument("--disable-javascript")
+driver = webdriver.Chrome(ChromeDriverManager(
+    chrome_type=ChromeType.GOOGLE).install())
+
 
 

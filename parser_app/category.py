@@ -3,7 +3,7 @@ from configs.settings import BASE_URL
 
 
 def parse_category_links(html):
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, "lxml")
     div_nav_container = soup.find(
         "div", {
             "class": "main-nav__container"
